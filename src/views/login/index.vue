@@ -15,33 +15,33 @@ const loading = ref(false)
 
 // 收集账号与密码数据
 const loginForm = reactive({
-    username: '',
-    password: ''
+  username: '',
+  password: '',
 })
 // 调用小的store进行传递数据，如果store成功的话store就会返回结构
 //不需要this.commit(useLogin,loginForm)的形式传递数据
 // 这样是用一个函数包裹上方代码然后函数前加await
 // 登录按钮的回调
 const login = async () => {
-    try {
-        // 登录请求
-        await userStore.useLogin(loginForm)
-        // 登录成功跳转首页
-        router.push('/')
-        // 登录成功提示信息
-        ElNotification({
-            type: 'success',
-            message: '登录成功',
-            title: `hi,${getTime()}好`
-        })
-    } catch (error: any) {
-        ElNotification({
-            type: 'error',
-            message: error.message
-        })
-    } finally {
-        loading.value = false
-    }
+  try {
+    // 登录请求
+    await userStore.useLogin(loginForm)
+    // 登录成功跳转首页
+    router.push('/')
+    // 登录成功提示信息
+    ElNotification({
+      type: 'success',
+      message: '登录成功',
+      title: `hi,${getTime()}好`,
+    })
+  } catch (error: any) {
+    ElNotification({
+      type: 'error',
+      message: error.message,
+    })
+  } finally {
+    loading.value = false
+  }
 }
 </script>
 

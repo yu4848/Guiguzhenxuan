@@ -9,6 +9,7 @@ export const constantRoute: RouteRecordRaw[] = [
     meta: {
       title: '登录',
       hidden: true,
+      icon: 'UserFilled',
     },
   },
   {
@@ -16,6 +17,11 @@ export const constantRoute: RouteRecordRaw[] = [
     component: () => import('@/layout/index.vue'),
     name: 'layout',
     redirect: '/home',
+    meta: {
+      title: '首页',
+      icon: 'HomeFilled',
+      hidden: false,
+    },
     children: [
       {
         path: '/home',
@@ -23,6 +29,7 @@ export const constantRoute: RouteRecordRaw[] = [
         name: 'home',
         meta: {
           title: '首页',
+          icon: 'HomeFilled',
         },
       },
     ],
@@ -34,6 +41,7 @@ export const constantRoute: RouteRecordRaw[] = [
     meta: {
       title: '404',
       hidden: true,
+      icon: 'WarningFilled',
     },
   },
   {
@@ -43,6 +51,7 @@ export const constantRoute: RouteRecordRaw[] = [
     meta: {
       title: '任意路由',
       hidden: true,
+      icon: 'QuestionFilled',
     },
   },
 ]
