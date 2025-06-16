@@ -16,7 +16,9 @@
     <div class="layout_tabbar"></div>
     <!-- 内容展示区域 -->
     <div class="layout_main">
-      <p style="height: 1000000px"></p>
+      <!-- 为layout这个一级路由配置二级路由出口 -->
+      <Main></Main>
+      <!-- 这个逻辑放到Main组件中，并且<router-view></router-view>会进行暴露 -->
     </div>
   </div>
 </template>
@@ -25,6 +27,7 @@
 import { useUserStore } from '@/store/modules/user'
 import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
+import Main from './main/index.vue'
 let userStore = useUserStore()
 </script>
 
